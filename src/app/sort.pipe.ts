@@ -3,6 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'sort',
   standalone: true,
+  // pure: false // disable cashing, pipe will run after every rerender
 })
 export class SortPipe implements PipeTransform {
   transform(value: string[] | number[], direction: 'asc' | 'desc' = 'asc') {
